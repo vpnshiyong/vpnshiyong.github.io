@@ -1,0 +1,352 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnshiyong.github.io/news/article-66587.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>mysql时间类型长度是19位_mysql 时间字段用什么类弄，长度是多少</title>
+    <link rel="icon" href="/assets/website/img/v2raynode/favicon.ico" type="image/x-icon"/>
+        <meta name="description" content="展开全部 mysql时间字段用：Date、Datetime和Timestamp。 (1)“Date”数据类型：用于存储没有时间的日期。e69da5e6ba90323131333532363134313" />
+    
+    <meta name="author" content="VPN试用 订阅链接节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnshiyong.github.io/news/article-66587.htm" />
+    <meta property="og:site_name" content="VPN试用 订阅链接节点官网" />
+    <meta property="og:title" content="mysql时间类型长度是19位_mysql 时间字段用什么类弄，长度是多少" />
+    <meta property="og:image" content="https://vpnshiyong.github.io/uploads/20240303/058c44e4ded2ba864aa5398b35a2c481.webp" />
+        <meta property="og:release_date" content="2025-03-03T08:14:46" />
+    <meta property="og:updated_time" content="2025-03-03T08:14:46" />
+        <meta property="og:description" content="展开全部 mysql时间字段用：Date、Datetime和Timestamp。 (1)“Date”数据类型：用于存储没有时间的日期。e69da5e6ba90323131333532363134313" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="mysql时间类型长度是19位_mysql 时间字段用什么类弄，长度是多少">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- google-fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- //google-fonts -->
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="/assets/website/css/v2raynode/style-starter.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GE2TTTPE1T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GE2TTTPE1T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--header-->
+    <header id="site-header" class="fixed-top">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg stroke">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                                    <span>VPN试用</span>
+                                </a>
+
+                <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ml-lg-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                            </ul>
+                </div>
+                <!-- toggle switch for light and dark theme -->
+                <div class="cont-ser-position">
+                    <nav class="navigation">
+                        <div class="theme-switch-wrapper">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox">
+                                <div class="mode-container">
+                                    <i class="gg-sun"></i>
+                                    <i class="gg-moon"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </nav>
+                </div>
+                <!-- //toggle switch for light and dark theme -->
+            </nav>
+        </div>
+    </header>
+    <!--//header-->
+    <!-- inner banner -->
+    <div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h1 class="inner-text-title font-weight-bold text-white mb-sm-3 mb-2" style="line-height: 3rem;word-break: break-all;">mysql时间类型长度是19位_mysql 时间字段用什么类弄，长度是多少</h1>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/">首页</a></li>
+                    <li><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span><a href="/news/">新闻资讯</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>正文</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- //inner banner -->
+    <!-- about section -->
+    <section class="video-section py-5">
+        <div class="container py-md-5 py-4">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p>展开全部</p> <p>mysql时间字段用：Date、Datetime和Timestamp。</p> <p>(1)“Date”数据类型：用于存储没有时间的日期。e69da5e6ba903231313335323631343130323136353331333433626435 Mysql获取并显示此类型的格式为“ YYYY-MM-DD”，支持的时间长度范围是“ 1000-00-00”至“ 9999-12-31”。</p> <p>(2)“Datetime”类型：存储日期和时间的数据。 存储和显示格式为“ YYYY-MM-DD HH：MM：SS”， 支持的时间长度范围是“ 1000-00-00 00:00:00”到“ 9999-12-31 23:59:59”。</p> <p>(3)“Timestamp”类型：存储日期和时间的数据。 存储和显示格式与日期时间相同。 支持的时间长度范围是“ 1970-01-01 00:00:01”至“ 2038-01-19 03:14:07”。</p> <p>所有不符合上述格式的数据都将转换为0值的相应类型。</p> <p align="center"><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/4d0c46600623de3ead9d55d1efaff932.jpg" alt="mysql时间类型长度是19位_mysql 时间字段用什么类弄，长度是多少"></p> <p>扩展资料：</p> <p>MySQL主要分为三种类型：字符串，日期和数字(每种类型实际上都有一个二进制类型，但并不常用)。</p> <p>*字符串分为定长char和不定长度varchar，char以声明的长度为准，而varchar的长度与值的长度和字符集有关。</p> <p>*数字和日期均为固定长度的字段。 不同的类型具有不同的长度。 例如，Datetime是5.6.4之后的5个字节，之前的是8个字节； timestamp是4个字节，因为其存储整数，小数部分的长度通常与位数有关。</p> </div> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-66584.htm">Android EditText光标指定位置</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-26-free-node-subscribe-links.htm" title="VPN试用 | 2月26日20.4M/S|免费VPN/Shadowrocket/Clash/SSR/V2ray免费节点链接地址">VPN试用 | 2月26日20.4M/S|免费VPN/Shadowrocket/Clash/SSR/V2ray免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-64720.htm" title="狗狗有偿领养怎么写（狗狗有偿领养怎么写协议书）">狗狗有偿领养怎么写（狗狗有偿领养怎么写协议书）</a></li>
+                        <li class="py-2"><a href="/news/article-62898.htm" title="动物医院需要什么设备才能开药 动物医院需要什么设备才能开药呢">动物医院需要什么设备才能开药 动物医院需要什么设备才能开药呢</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-17-clash-v2ray-ss-ssr.htm" title="VPN试用 | 2月17日21.3M/S|免费VPN/Shadowrocket/Clash/SSR/V2ray免费节点链接地址">VPN试用 | 2月17日21.3M/S|免费VPN/Shadowrocket/Clash/SSR/V2ray免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-65342.htm" title="三国杀技能触发顺序（三国杀技能触发顺序是什么）">三国杀技能触发顺序（三国杀技能触发顺序是什么）</a></li>
+                        <li class="py-2"><a href="/news/article-61693.htm" title="深圳动物防疫站给猫打疫苗多少钱（深圳宠物医院猫猫打疫苗怎么收费）">深圳动物防疫站给猫打疫苗多少钱（深圳宠物医院猫猫打疫苗怎么收费）</a></li>
+                        <li class="py-2"><a href="/news/article-60533.htm" title="动物医院手续流程图（动物医院诊疗程序）">动物医院手续流程图（动物医院诊疗程序）</a></li>
+                        <li class="py-2"><a href="/news/article-64105.htm" title="动物疫苗上市公司有哪些品牌生产（动物疫苗的上市公司有哪些）">动物疫苗上市公司有哪些品牌生产（动物疫苗的上市公司有哪些）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-24-node-share-links.htm" title="VPN试用 | 2月24日22.6M/S|免费VPN/Clash/V2ray/SSR/Shadowrocket免费节点链接地址">VPN试用 | 2月24日22.6M/S|免费VPN/Clash/V2ray/SSR/Shadowrocket免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-15-node-share-links.htm" title="VPN试用 | 2月15日19.2M/S|免费VPN/Shadowrocket/V2ray/SSR/Clash免费节点链接地址">VPN试用 | 2月15日19.2M/S|免费VPN/Shadowrocket/V2ray/SSR/Clash免费节点链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //about section -->
+        <!-- footer -->
+    <footer class="w3l-footer-22 position-relative mt-5 pt-5">
+        
+        <!-- copyright -->
+        <div class="copyright-footer text-center">
+            <div class="container">
+                <div class="columns">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>VPN试用 订阅链接节点官网 版权所有</p>
+                    <p>Powered by WordPress</p>
+                </div>
+            </div>
+        </div>
+        <!-- //copyright -->
+    </footer>
+    <!-- //footer -->
+    <!-- Js scripts -->
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fa fa-level-up" aria-hidden="true"></span>
+    </button>
+    <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("movetop").style.display = "block";
+        } else {
+            document.getElementById("movetop").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+    <!-- //move top -->
+    <!-- common jquery plugin -->
+    <script src="/assets/website/js/frontend/v2raynode/jquery-3.5.1.min.js"></script>
+    <!-- //common jquery plugin -->
+    <!-- banner slider -->
+    <script src="/assets/website/js/frontend/v2raynode/owl.carousel.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.owl-one').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: false,
+            responsiveClass: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplaySpeed: 1000,
+            autoplayHoverPause: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                480: {
+                    items: 1,
+                    nav: false
+                },
+                667: {
+                    items: 1,
+                    nav: false
+                },
+                1000: {
+                    items: 1,
+                    nav: false
+                }
+            }
+        })
+    })
+    </script>
+    <!-- //banner slider -->
+    <!-- counter for stats -->
+    <script src="/assets/website/js/frontend/v2raynode/counter.js"></script>
+    <!-- //counter for stats -->
+    <!-- theme switch js (light and dark)-->
+    <script src="/assets/website/js/frontend/v2raynode/theme-change.js"></script>
+    <script>
+    function autoType(elementClass, typingSpeed) {
+        var thhis = $(elementClass);
+        thhis.css({
+            "position": "relative",
+            "display": "inline-block"
+        });
+        thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
+        thhis = thhis.find(".text-js");
+        var text = thhis.text().trim().split('');
+        var amntOfChars = text.length;
+        var newString = "";
+        thhis.text("|");
+        setTimeout(function() {
+            thhis.css("opacity", 1);
+            thhis.prev().removeAttr("style");
+            thhis.text("");
+            for (var i = 0; i < amntOfChars; i++) {
+                (function(i, char) {
+                    setTimeout(function() {
+                        newString += char;
+                        thhis.text(newString);
+                    }, i * typingSpeed);
+                })(i + 1, text[i]);
+            }
+        }, 1500);
+    }
+
+    $(document).ready(function() {
+        // Now to start autoTyping just call the autoType function with the 
+        // class of outer div
+        // The second paramter is the speed between each letter is typed.   
+        autoType(".type-js", 200);
+    });
+    </script>
+    <!-- //theme switch js (light and dark)-->
+    <!-- MENU-JS -->
+    <script>
+    $(window).on("scroll", function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 80) {
+            $("#site-header").addClass("nav-fixed");
+        } else {
+            $("#site-header").removeClass("nav-fixed");
+        }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function() {
+        $("header").toggleClass("active");
+    });
+    $(document).on("ready", function() {
+        if ($(window).width() > 991) {
+            $("header").removeClass("active");
+        }
+        $(window).on("resize", function() {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+        });
+    });
+    </script>
+    <!-- //MENU-JS -->
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+    $(function() {
+        $('.navbar-toggler').click(function() {
+            $('body').toggleClass('noscroll');
+        })
+    });
+    </script>
+    <!-- //disable body scroll which navbar is in active -->
+    <!--bootstrap-->
+    <script src="/assets/website/js/frontend/v2raynode/bootstrap.min.js"></script>
+    <!-- //bootstrap-->
+    <!-- //Js scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
