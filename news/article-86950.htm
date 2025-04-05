@@ -129,6 +129,7 @@
                   				  				  				<p>享元模式的理解：</p> <p>享元模式的定义：运用共享技术支持大量细粒度对象的复用；</p> <p>Flyweight Pattern Definition：Use sharing to support large numbers of fine-grained efficiently.</p> <p>享元模式关键词：<span style="color: rgba(53, 152, 219, 1)">大量、细粒度、复用、享元池、享元工厂</span>；</p> <ol> <li>当系统中存在大量的细粒度的相同或相似对象时，可以使用享元模式；</li> <li>享元模式通过共享技术，实现相同或相似对象的重复利用；</li> <li>享元的字面理解：<span style="color: rgba(53, 152, 219, 1)">享</span>也就是分享共享的意思，<span style="color: rgba(53, 152, 219, 1)">元</span>就是共享的元素、对象；</li> <li><span style="color: rgba(53, 152, 219, 1)">Flyweight</span>的字面理解：Flyweight本意是拳击运动的一个术语，就是蝇量级的意思，flyweight 蝇量级 112磅；</li> <li>享元模式也叫轻量级模式，享元是对Flyweight的意译，直译的话应该叫蝇量级模式；</li> <li>英文定义中采用Flyweight，是想表达对象的粒度，也就是fine-grained细粒度的意思；</li> <li>grain本意表示谷物，<span style="color: rgba(53, 152, 219, 1)">grained</span>表示像谷物那种颗粒状态，即粒度，而fine-grained则表示细粒度，例如fine grained soil 细土、coarse grained soil粗粒土；</li> <li>享元模式和Unity中的预制体作用类似，享元模式可以通过共享元素生成多个对象，Unity同样可以通过Prefabs生成成千上万的怪物；</li> <li>还有诸如对象池、线程池，实际上也是享元模式的使用案例；</li> </ol> <p>类图with StarUML</p> <p><img fetchpriority="high" decoding="async" src="http://img.555519.xyz/uploads3/20220510/3aa0b7241c8a8fab36621cb4fcaabba7.jpg" alt="设计模式之：享元模式FlyweightPattern的实现"></p> <p>棋子抽象类和2个实现类</p> <pre class="language-csharp"><code>    internal abstract class Chessman     {         public abstract string GetColor();         public void Display() { Console.WriteLine($"棋子颜色{this.GetColor()}"); }     }</code></pre> <pre class="language-csharp"><code>    internal class BlackChessman : Chessman     {         public override string GetColor() { return "黑色"; }     }</code></pre> <pre class="language-csharp"><code>    internal class WhiteChessman : Chessman     {         public override string GetColor() { return "白色"; }     }</code></pre> <p>享元工厂类</p> <pre class="language-csharp"><code>    internal class ChessmanFactory     {         //饿汉式单例模式         private static ChessmanFactory instance = new ChessmanFactory();         //该字典相当于享元池（对象池）Flyweight Pool         private Dictionary&lt;string, Chessman&gt; dictionary;         //构造注入依赖项Chessman/BlackChessman/WhiteChessman         private ChessmanFactory()         {             dictionary = new Dictionary&lt;string, Chessman&gt;();             Chessman black = new BlackChessman();             Chessman white = new WhiteChessman();             dictionary.Add("b", black);             dictionary.Add("w", white);         }         //返回唯一实例         public static ChessmanFactory GetInstance() { return instance; }         //根据键是b还是w，返回字典中的对应棋子         public Chessman GetChessman(string color) { return dictionary[color]; }     }</code></pre> <p>客户端</p> <pre class="language-csharp"><code>    internal class Program     {         static void Main(string[] args)         {             Chessman black1, black2, white1, white2;             ChessmanFactory factory = ChessmanFactory.GetInstance();             //生成两颗黑子，并比较             black1 = factory.GetChessman("b");             black2 = factory.GetChessman("b");             Console.WriteLine($"两颗黑子是否相同？{black1 == black2}");             //生成两颗白字，并比较             white1 = factory.GetChessman("w");             white2 = factory.GetChessman("w");             Console.WriteLine($"两颗白子是否相同？{black1 == black2}");             //显示棋子             black1.Display();             black2.Display();             white1.Display();             white2.Display();              Console.Read();         }     }</code></pre> <p>运行结果</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b5f65890188f9fa6923c173fdc91069a.jpg" alt="设计模式之：享元模式FlyweightPattern的实现"></p> <p id="1648972570207"> <p id="1648972562495"> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-86949.htm">Java中equals和==的区别，equals和hashcode的区别</a></p>
+                                        <p>下一个：<a href="/news/article-87667.htm">动物疫苗现状调查（动物疫苗现状调查报告）</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -138,16 +139,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-85529.htm" title="中国兽药十大名牌厂家排名百度百科图片（国内排名前十的兽药厂家）">中国兽药十大名牌厂家排名百度百科图片（国内排名前十的兽药厂家）</a></li>
-                        <li class="py-2"><a href="/news/article-69784.htm" title="宠物粮食市场前景如何发展（宠物粮市场分析）">宠物粮食市场前景如何发展（宠物粮市场分析）</a></li>
-                        <li class="py-2"><a href="/news/article-84078.htm" title="Feign优化之Client选择">Feign优化之Client选择</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-3-19-free-high-speed-nodes.htm" title="VPN试用 | 3月19日18.6M/S|免费VPN/Shadowrocket/SSR/Clash/V2ray免费节点链接地址">VPN试用 | 3月19日18.6M/S|免费VPN/Shadowrocket/SSR/Clash/V2ray免费节点链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-82665.htm" title="宠物粮食加工厂设备生产厂家电话号码是多少 宠物粮食加工厂设备生产厂家电话号码是多少">宠物粮食加工厂设备生产厂家电话号码是多少 宠物粮食加工厂设备生产厂家电话号码是多少</a></li>
-                        <li class="py-2"><a href="/news/article-77815.htm" title="我们如何计算MySQL中两个时间值之间的差？">我们如何计算MySQL中两个时间值之间的差？</a></li>
-                        <li class="py-2"><a href="/news/article-80558.htm" title="2022国考公务员报名（2022国考公务员报名考试时间）">2022国考公务员报名（2022国考公务员报名考试时间）</a></li>
-                        <li class="py-2"><a href="/news/article-86949.htm" title="Java中equals和==的区别，equals和hashcode的区别">Java中equals和==的区别，equals和hashcode的区别</a></li>
+                        <li class="py-2"><a href="/news/article-78503.htm" title="宠物粮公司排名（宠物粮厂家）">宠物粮公司排名（宠物粮厂家）</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-3-4-free-node-subscribe.htm" title="VPN试用 | 3月4日20.7M/S|免费VPN/SSR/Clash/V2ray/Shadowrocket免费节点链接地址">VPN试用 | 3月4日20.7M/S|免费VPN/SSR/Clash/V2ray/Shadowrocket免费节点链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-80556.htm" title="动物医院有哪些功能区 动物医院有哪些功能区域">动物医院有哪些功能区 动物医院有哪些功能区域</a></li>
+                        <li class="py-2"><a href="/news/article-88407.htm" title="SpringBoot 整合ActiveMQ">SpringBoot 整合ActiveMQ</a></li>
+                        <li class="py-2"><a href="/news/article-77136.htm" title="如果我们将日期成分和时间成分作为TIMEDIFF()函数的参数，MySQL将返回什么？">如果我们将日期成分和时间成分作为TIMEDIFF()函数的参数，MySQL将返回什么？</a></li>
+                        <li class="py-2"><a href="/news/article-75779.htm" title="vue 使用echarts绘制折线图">vue 使用echarts绘制折线图</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-17-clash-v2ray-ss-ssr.htm" title="VPN试用 | 3月17日19.7M/S|免费VPN/Clash/SSR/V2ray/Shadowrocket免费节点链接地址">VPN试用 | 3月17日19.7M/S|免费VPN/Clash/SSR/V2ray/Shadowrocket免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-3-free-subscribe-node.htm" title="VPN试用 | 3月3日21.1M/S|免费VPN/SSR/Clash/V2ray/Shadowrocket免费节点链接地址">VPN试用 | 3月3日21.1M/S|免费VPN/SSR/Clash/V2ray/Shadowrocket免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-70452.htm" title="宠物猫三针疫苗多少钱（宠物猫三针疫苗多少钱啊）">宠物猫三针疫苗多少钱（宠物猫三针疫苗多少钱啊）</a></li>
+                        <li class="py-2"><a href="/news/article-76455.htm" title="国内兽药厂家排名前十强名单（国内兽药厂家排名前十强名单图片）">国内兽药厂家排名前十强名单（国内兽药厂家排名前十强名单图片）</a></li>
+                        <li class="py-2"><a href="/news/article-79187.htm" title="青岛哪家宠物医院口碑好（青岛哪家宠物医院口碑好一点）">青岛哪家宠物医院口碑好（青岛哪家宠物医院口碑好一点）</a></li>
                     </ul>
     </div>
 </div>
@@ -159,7 +160,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
@@ -182,15 +183,17 @@
         <div class="copyright-footer text-center">
             <div class="container">
                 <div class="columns">
-                            <p>
-                                <a href="/">首页</a> | 
-                                <a href="/free-node/">免费节点</a> | 
-                                <a href="/news/">新闻资讯</a> |
-                                <a href="/about-us.htm">关于我们</a> |
-                                <a href="/disclaimer.htm">免责申明</a> |
-                                <a href="/privacy.htm">隐私申明</a> |
-                                <a href="/sitemap.xml">网站地图</a>
-                            </p>
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
                     <p>VPN试用 订阅链接节点官网 版权所有</p>
                     <p>Powered by WordPress</p>
                 </div>
