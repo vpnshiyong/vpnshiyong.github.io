@@ -1,0 +1,354 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnshiyong.github.io/news/article-99513.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Azure Virtual Desktop创建配置管理详解</title>
+    <link rel="icon" href="/assets/website/img/v2raynode/favicon.ico" type="image/x-icon"/>
+        <meta name="description" content="一，引言 Azure 虚拟创面是一项 Azure 服务，可以让我们管理： 　　1）VDI（虚拟桌面基础架构） 　　2）云端的 RDSH：RDSH 是 RDS（远程桌面服务）中的一个角色。这些类型的服务" />
+    
+    <meta name="author" content="VPN试用 订阅链接节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnshiyong.github.io/news/article-99513.htm" />
+    <meta property="og:site_name" content="VPN试用 订阅链接节点官网" />
+    <meta property="og:title" content="Azure Virtual Desktop创建配置管理详解" />
+    <meta property="og:image" content="https://vpnshiyong.github.io/uploads/20240303/62ea819da249aa71125f70ab46ff4a83.webp" />
+        <meta property="og:release_date" content="2025-04-19T08:58:27" />
+    <meta property="og:updated_time" content="2025-04-19T08:58:27" />
+        <meta property="og:description" content="一，引言 Azure 虚拟创面是一项 Azure 服务，可以让我们管理： 　　1）VDI（虚拟桌面基础架构） 　　2）云端的 RDSH：RDSH 是 RDS（远程桌面服务）中的一个角色。这些类型的服务" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Azure Virtual Desktop创建配置管理详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- google-fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- //google-fonts -->
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="/assets/website/css/v2raynode/style-starter.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GE2TTTPE1T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GE2TTTPE1T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--header-->
+    <header id="site-header" class="fixed-top">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg stroke">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                                    <span>VPN试用</span>
+                                </a>
+
+                <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ml-lg-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                            </ul>
+                </div>
+                <!-- toggle switch for light and dark theme -->
+                <div class="cont-ser-position">
+                    <nav class="navigation">
+                        <div class="theme-switch-wrapper">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox">
+                                <div class="mode-container">
+                                    <i class="gg-sun"></i>
+                                    <i class="gg-moon"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </nav>
+                </div>
+                <!-- //toggle switch for light and dark theme -->
+            </nav>
+        </div>
+    </header>
+    <!--//header-->
+    <!-- inner banner -->
+    <div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h1 class="inner-text-title font-weight-bold text-white mb-sm-3 mb-2" style="line-height: 3rem;word-break: break-all;">Azure Virtual Desktop创建配置管理详解</h1>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/">首页</a></li>
+                    <li><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span><a href="/news/">新闻资讯</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>正文</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- //inner banner -->
+    <!-- about section -->
+    <section class="video-section py-5">
+        <div class="container py-md-5 py-4">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<h2>一，引言</h2> <p>Azure 虚拟创面是一项 Azure 服务，可以让我们管理：</p> <p>　　1）VDI（虚拟桌面基础架构）</p> <p>　　2）云端的 RDSH：<span style="box-sizing: border-box; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; color: rgba(64, 66, 73, 1); font-family: Roboto, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif; font-size: 16px; vertical-align: inherit">RDSH 是 RDS（远程桌面服务）中的一个角色。</span><span style="box-sizing: border-box; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; color: rgba(64, 66, 73, 1); font-family: Roboto, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif; font-size: 16px; vertical-align: inherit">这些类型的服务器用于托管用户远程访问的 Windows 桌面或应用程序。</span></p> <p><span style="color: rgba(64, 66, 73, 1); font-family: Roboto, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif"><span style="font-size: 16px">为此我们可以通过使用 Azure Virtual Desktop 做那些操作呢？？</span></span></p> <ul style="box-sizing: inherit; margin: 16px 0 16px 38px; padding: 0; list-style: none; outline-color: inherit; color: rgba(23, 23, 23, 1); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px"> <li style="box-sizing: inherit; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; outline: 0 inherit">设置多会话 Windows 10 部署，使整个 Windows 10 操作系统获得可伸缩性</li> <li style="box-sizing: inherit; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; outline: 0 inherit">虚拟化 Microsoft 365 应用企业版，并对其进行优化，使其可在多用户虚拟场景中运行</li> <li style="box-sizing: inherit; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; outline: 0 inherit">为 Windows 7 虚拟桌面提供免费的扩展安全更新</li> <li style="box-sizing: inherit; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; outline: 0 inherit">将现有的远程桌面服务 (RDS) 和 Windows Server 桌面与应用迁移到任何计算机</li> <li style="box-sizing: inherit; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; outline: 0 inherit">虚拟化桌面和应用</li> <li style="box-sizing: inherit; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; outline: 0 inherit">使用统一的管理体验管理 Windows 10、Windows Server 和 Windows 7 桌面与应用</li> </ul> <p>注意重点：Azure 虚拟桌面不支持 RemoteApp 和桌面连接（RADC）客户端或者远程桌面连接（MSTSC）客户端。</p> <p>支撑的远程桌面客户端推荐：</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4QWr2"  target="_blank" rel="nofollow">Windows 桌面</a></p> <h2>二，正文</h2> <h3>1，创建虚拟网络</h3> <p>Azure Portal 首页点击 “Create a resource”，搜索 “virtual network”</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/2998f1ac534b0031c08ade1e6c5fcfb6.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>输入以下参数</p> <p>Resource group：“Web_Test_VM_RG”</p> <p>Name：“cnbateblogweb-avd-network”</p> <p>Region 选择：“West US”</p> <p>点击 “Next：IP Addresses &gt; ” 配置 IP 地址范围</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/971157a7e7f9f860beb48adb06c49897.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>关于 IP Address 输入以下参数</p> <p>IPv4 address space：“10.1.0.0/16”</p> <p><strong>Subnet</strong></p> <p>　　Subnet name：“avd-subnet01”</p> <p>　　Subnet address range："10.1.0.0/16"</p> <p>点击 “Review + create” 进行创建预览</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/ec3ef825639cb2477f6a0a6962320f4c.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>等待校验完成后，点击 “Create” 进行创建</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/647c776fe0ec2abdb313a48bba74b93c.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>创建完成后，我们就可以跳转到改资源进行查看</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/8a3b5718790c24955915a66203258dd8.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <h3>2，创建虚拟桌面</h3> <p>搜索 “Azure Virtual Desktop”，并点击图中所指的服务</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/af6e5691f2f4581273562ce389b660ef.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>首先我们需要创建 “host pool” 我们需要点击 “Create a host pool" 进行创建</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/9a52f6f2449bf76bd4d1eec67f624635.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>输入以下参数</p> <p>Resource group 选择创建新的："Web_Test_ACD_RG"</p> <p>Host pool name：“cnbateblogweb-avdpool”</p> <p>Location：“West US”</p> <p>Validation environment 默认：“No”</p> <p><strong>Host pool type</strong></p> <p>　　Host pool type：“Personal”</p> <p>　　Assignment type：“Automatic”</p> <p>输入完以上参数后，点击 “Next: Virtual Machines &gt;” 设置虚拟机相关参数</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/36e5cc9e414bbe5be1fccf2e5d2f4dfa.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>编辑以下参数</p> <p>Add Azure virtual machines 选择：“Yes”</p> <p>Resource group：”Web_Test_VM_RG“</p> <p>Name prefix：”allen“</p> <p>Virtual machine location：”West US“</p> <p>Image：”Windows 11 Enterprise“</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/66dd268f9e35be756a1b2eb25088b682.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>Number of VMs：”1“</p> <p>OS disk type：”Standard SSD“</p> <p><strong>Network and security</strong></p> <p>　　virtual network："cnbateblogweb-avd-network"</p> <p>　　Subnet："avd-subnet01"</p> <p>　　Network security group："Basic"</p> <p>　　Public inbound ports："No"</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/76f9c0521e595c8f41995c836418bf38.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p><strong>Domain to join</strong></p> <p><strong></strong>Select which directory you would like to join 选择："Azure Active Directory"</p> <p><strong>Virtual Machine Adminqistrator account</strong></p> <p>　　Username："cnbateblogweb01"</p> <p>　　Password："XXXXXXXXXX"</p> <p>　　Confirm password："XXXXXXXXXX"</p> <p>点击 ”Review + create“ 创建预览</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/3d84aa40a1a236fd6d4fdc7e79cd890b.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>验证完成后，点击 ”Create“ 进行创建</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b893d68235fbf08c9b48a054a00c5707.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>稍等片刻，等待创建完成后，点击跳转到改资源进行查看</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7a562a5c7cd268fcca2b9246c70bc6d1.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>可以看到我们创建好的&nbsp; host pools</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7852c0e820fa41e44d0282b23a5081b1.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>将用户分配到 Azure Virtual Desktop 的用户组种，选择 “Manage =》Application groups”，并点击进入</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/8f974df289c23ed02bf0fc2d9e6df0c7.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>分配用户，选择 "Manage Assignments"，点击 “Add”</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/37e40554dc176da1fef4afc9b43b9ba3.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>找到之前创建好的用户 “zhangsan”，点击 ”Select“ 进行添加</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/586bd10eb8c9f544a5c4cff700276e5e.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>回到 Azure Virtual Desktop 开始设置桌面工作区。选择 ”Manage =》Workspaces“，点击 ”Create“ 进行创建</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/158ab45b4f9a9aa65669ab4597d79a53.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>输入以下参数</p> <p>Resource group 尽量选择和 Azure Virtual Desktop 的资源组保持一致：”Web_Test_AVD_RG“</p> <p>Workspace name：”cnbateblogweb-sp“</p> <p>Location：”West US“</p> <p>点击 ”Next：Application groups &gt;“ 应用组</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/c2b3fa238a65c5623c832693e5e7eb7b.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>在应用程序注册组选项卡下，选择 ”Yes“，然后选择我们之前创建主机池时自动构建的应用程序组</p> <p>Register application groups：”Yes“</p> <p><strong>Host pool Application groups</strong></p> <p>　　Name：”cnbateblogweb-avdpool-DAG“</p> <p>点击 ”Review + create“ 创建预检验</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/96910a444ab94ef7cdb3933381702395.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>预校验完成后，点击 ”Create“ 进行创建</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b3458ac5bd037113c0ca1a85309caa1c.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>创建完成后，点击 ”Go to resource“ 跳转到该资源</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7553d4dacf741434019dcbf351c9929b.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <h3>3，连接 Azure Virtual Desktop</h3> <p>为了快速演示，我将使用 Web 远程方式，以下时登录链接：</p> <p><a title="https://rdweb.wvd.microsoft.com/arm/webclient" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://rdweb.wvd.microsoft.com/arm/webclient"  target="_blank" rel="nofollow"><span>https://rdweb.wvd.microsoft.com/arm/webclient</span></a></p> <p>应用组分配的用户账号进行登录</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/a1e42845eebaf710f6ad1f47628beea1.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>点击后，提示我们输入用户名和密码，我们可以之前创建 host pools 的本地管理员账号和已分配虚拟机用户登录角色的用户进行登录</p> <p>登录成功后，我们就可以看到 Windows 11 的界面了</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/3224c3105ea35b1c56376f5012e9f245.jpg" alt="Azure Virtual Desktop创建配置管理详解"></p> <p>Bingo，成功！！！</p> <h2>三，结尾</h2> <p><span style="box-sizing: border-box; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; color: rgba(64, 66, 73, 1); font-family: Roboto, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif; font-size: 16px; vertical-align: inherit">RDSH 是 RDS（远程桌面服务）中的一个角色。</span><span style="box-sizing: border-box; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; color: rgba(64, 66, 73, 1); font-family: Roboto, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif; font-size: 16px; vertical-align: inherit">这些类型的服务器用于托管用户远程访问的 Windows 桌面或应用程序。</span></p> <p>&nbsp;Azure Virtual Desktop 的另外一个问题就是费用，<span><span>如果我们想迁移和使用 Azure，或者只是</span><span>通过基础设施的本地管理，那么我们就得考虑怎么合理的计算费用问题了</span></span><em><span>。</span></em></p> <p>参考链接：什么是<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.microsoft.com/zh-cn/azure/virtual-desktop/overview?WT.mc_id=AZ-MVP-5004191"  target="_blank" rel="nofollow">Azure Virtual Desktop</a></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-99510.htm">基于MyBatis的多租户设计方案与实现</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-clash-v2ray-ss-ssr.htm" title="VPN试用 | 3月6日22.5M/S|免费VPN/V2ray/Shadowrocket/Clash/SSR免费节点链接地址">VPN试用 | 3月6日22.5M/S|免费VPN/V2ray/Shadowrocket/Clash/SSR免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-96567.htm" title="动物疫苗厂家排名前十名有哪几家 动物疫苗厂家排名前十名有哪几家呢">动物疫苗厂家排名前十名有哪几家 动物疫苗厂家排名前十名有哪几家呢</a></li>
+                        <li class="py-2"><a href="/news/article-84804.htm" title="如何使用Copy-Item在PowerShell中复制多个文件？">如何使用Copy-Item在PowerShell中复制多个文件？</a></li>
+                        <li class="py-2"><a href="/news/article-77816.htm" title="褪黑素真的助眠吗(褪黑素助眠的作用机制)">褪黑素真的助眠吗(褪黑素助眠的作用机制)</a></li>
+                        <li class="py-2"><a href="/news/article-71759.htm" title="北京看宠物最好的医院是哪家（北京看宠物最好的医院是哪家好）">北京看宠物最好的医院是哪家（北京看宠物最好的医院是哪家好）</a></li>
+                        <li class="py-2"><a href="/news/article-83380.htm" title="给动物打疫苗多少钱一针啊（给动物打的疫苗是什么）">给动物打疫苗多少钱一针啊（给动物打的疫苗是什么）</a></li>
+                        <li class="py-2"><a href="/news/article-67214.htm" title="宠物回收平台app 宠物回收平台">宠物回收平台app 宠物回收平台</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-7-free-node-subscribe-links.htm" title="VPN试用 | 3月7日18.1M/S|免费VPN/Clash/Shadowrocket/V2ray/SSR免费节点链接地址">VPN试用 | 3月7日18.1M/S|免费VPN/Clash/Shadowrocket/V2ray/SSR免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-99513.htm" title="Azure Virtual Desktop创建配置管理详解">Azure Virtual Desktop创建配置管理详解</a></li>
+                        <li class="py-2"><a href="/news/article-92086.htm" title="麦富迪猫粮怎么样 麦富迪猫粮属于什么档次">麦富迪猫粮怎么样 麦富迪猫粮属于什么档次</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //about section -->
+        <!-- footer -->
+    <footer class="w3l-footer-22 position-relative mt-5 pt-5">
+        
+        <!-- copyright -->
+        <div class="copyright-footer text-center">
+            <div class="container">
+                <div class="columns">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>VPN试用 订阅链接节点官网 版权所有</p>
+                    <p>Powered by WordPress</p>
+                </div>
+            </div>
+        </div>
+        <!-- //copyright -->
+    </footer>
+    <!-- //footer -->
+    <!-- Js scripts -->
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fa fa-level-up" aria-hidden="true"></span>
+    </button>
+    <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("movetop").style.display = "block";
+        } else {
+            document.getElementById("movetop").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+    <!-- //move top -->
+    <!-- common jquery plugin -->
+    <script src="/assets/website/js/frontend/v2raynode/jquery-3.5.1.min.js"></script>
+    <!-- //common jquery plugin -->
+    <!-- banner slider -->
+    <script src="/assets/website/js/frontend/v2raynode/owl.carousel.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.owl-one').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: false,
+            responsiveClass: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplaySpeed: 1000,
+            autoplayHoverPause: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                480: {
+                    items: 1,
+                    nav: false
+                },
+                667: {
+                    items: 1,
+                    nav: false
+                },
+                1000: {
+                    items: 1,
+                    nav: false
+                }
+            }
+        })
+    })
+    </script>
+    <!-- //banner slider -->
+    <!-- counter for stats -->
+    <script src="/assets/website/js/frontend/v2raynode/counter.js"></script>
+    <!-- //counter for stats -->
+    <!-- theme switch js (light and dark)-->
+    <script src="/assets/website/js/frontend/v2raynode/theme-change.js"></script>
+    <script>
+    function autoType(elementClass, typingSpeed) {
+        var thhis = $(elementClass);
+        thhis.css({
+            "position": "relative",
+            "display": "inline-block"
+        });
+        thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
+        thhis = thhis.find(".text-js");
+        var text = thhis.text().trim().split('');
+        var amntOfChars = text.length;
+        var newString = "";
+        thhis.text("|");
+        setTimeout(function() {
+            thhis.css("opacity", 1);
+            thhis.prev().removeAttr("style");
+            thhis.text("");
+            for (var i = 0; i < amntOfChars; i++) {
+                (function(i, char) {
+                    setTimeout(function() {
+                        newString += char;
+                        thhis.text(newString);
+                    }, i * typingSpeed);
+                })(i + 1, text[i]);
+            }
+        }, 1500);
+    }
+
+    $(document).ready(function() {
+        // Now to start autoTyping just call the autoType function with the 
+        // class of outer div
+        // The second paramter is the speed between each letter is typed.   
+        autoType(".type-js", 200);
+    });
+    </script>
+    <!-- //theme switch js (light and dark)-->
+    <!-- MENU-JS -->
+    <script>
+    $(window).on("scroll", function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 80) {
+            $("#site-header").addClass("nav-fixed");
+        } else {
+            $("#site-header").removeClass("nav-fixed");
+        }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function() {
+        $("header").toggleClass("active");
+    });
+    $(document).on("ready", function() {
+        if ($(window).width() > 991) {
+            $("header").removeClass("active");
+        }
+        $(window).on("resize", function() {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+        });
+    });
+    </script>
+    <!-- //MENU-JS -->
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+    $(function() {
+        $('.navbar-toggler').click(function() {
+            $('body').toggleClass('noscroll');
+        })
+    });
+    </script>
+    <!-- //disable body scroll which navbar is in active -->
+    <!--bootstrap-->
+    <script src="/assets/website/js/frontend/v2raynode/bootstrap.min.js"></script>
+    <!-- //bootstrap-->
+    <!-- //Js scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
