@@ -1,4 +1,4 @@
-# VPN试用 - 9月6日22M/S|免费Clash/SSR/V2ray/Shadowrocket节点推荐，V2rayC梯子购买推荐  更新时间 2025-09-06 09:41:33
+# VPN试用 - 9月12日18.6M/S|免费V2ray/Clash/Shadowrocket/SSR节点推荐，V2rayC梯子购买推荐  更新时间 2025-09-12 06:08:56
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://vpnshiyong.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://vpnshiyong.github.io/uploads/2025/09/0-20250906.yaml
-- https://vpnshiyong.github.io/uploads/2025/09/1-20250906.yaml
-- https://vpnshiyong.github.io/uploads/2025/09/2-20250906.yaml
-- https://vpnshiyong.github.io/uploads/2025/09/3-20250906.yaml
-- https://vpnshiyong.github.io/uploads/2025/09/4-20250906.yaml
+- https://vpnshiyong.github.io/uploads/2025/09/0-20250912.yaml
+- https://vpnshiyong.github.io/uploads/2025/09/1-20250912.yaml
+- https://vpnshiyong.github.io/uploads/2025/09/2-20250912.yaml
+- https://vpnshiyong.github.io/uploads/2025/09/3-20250912.yaml
+- https://vpnshiyong.github.io/uploads/2025/09/4-20250912.yaml
 
 ### V2ray订阅链接
 
-- https://vpnshiyong.github.io/uploads/2025/09/0-20250906.txt
-- https://vpnshiyong.github.io/uploads/2025/09/1-20250906.txt
-- https://vpnshiyong.github.io/uploads/2025/09/2-20250906.txt
-- https://vpnshiyong.github.io/uploads/2025/09/3-20250906.txt
-- https://vpnshiyong.github.io/uploads/2025/09/4-20250906.txt
+- https://vpnshiyong.github.io/uploads/2025/09/0-20250912.txt
+- https://vpnshiyong.github.io/uploads/2025/09/1-20250912.txt
+- https://vpnshiyong.github.io/uploads/2025/09/2-20250912.txt
+- https://vpnshiyong.github.io/uploads/2025/09/3-20250912.txt
+- https://vpnshiyong.github.io/uploads/2025/09/4-20250912.txt
 
 ### Sing-box订阅链接
 
-- https://vpnshiyong.github.io/uploads/2025/09/20250906.json
+- https://vpnshiyong.github.io/uploads/2025/09/20250912.json
 
 ## 更多clash节点订阅 ：
 
