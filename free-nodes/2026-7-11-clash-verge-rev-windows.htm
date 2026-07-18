@@ -304,17 +304,18 @@ AltStore是一款允许用户自助安装未上架应用的工具，支持安装
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
         <p>上一个：<a href="/free-nodes/2026-7-10-free-node-subscribe.htm">VPN试用 - 7月10日18.2M/S|免费Singbox节点/Clash节点/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐</a></p>
+        <p>下一个：<a href="/free-nodes/2026-7-12-clash-meta-github.htm">VPN试用 - 7月12日22.7M/S|免费Trojan节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a></p>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何按端口匹配流量分配节点？</h5></div>
+    <div class="panel-heading"><h5>QuantumultX 支持按端口和协议分流吗？</h5></div>
     <div class="panel-body">
-        Sing-box 支持按端口匹配流量，将不同应用的流量分配到指定节点。结合策略组使用，可实现精准分流，优化访问速度和网络稳定性，提高整体网络体验。<hr />    </div>
+        支持。QuantumultX 可以按 TCP、UDP、端口和应用协议分流流量，结合策略组使用，确保游戏、视频和广告屏蔽走最优节点，提高访问速度和网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 的节点测速结果能影响策略组吗？</h5></div>
+    <div class="panel-heading"><h5>WinXray 的 PAC 模式有什么优势？</h5></div>
     <div class="panel-body">
-        可以。Matsuri 会将延迟最低的节点自动标记为优先节点，结合策略组，程序会优先选择最佳节点处理流量，保证访问速度和连接稳定性。<hr />    </div>
+        PAC 模式可根据规则动态判断流量是否走代理，无需手动切换节点。适合国内外混合访问环境，提高网络访问速度和稳定性，同时减少误操作导致的访问失败。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 的配置文件与 Clash 有何区别？</h5></div>
@@ -322,9 +323,14 @@ AltStore是一款允许用户自助安装未上架应用的工具，支持安装
         Sing-box 的配置使用 JSON 格式，而 Clash 采用 YAML 格式。前者更适合程序自动解析，后者更便于人工编辑。Sing-box 在性能和扩展性上有明显优势，支持更细粒度的流量控制。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的 PAC 模式有什么优势？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 在路由器上使用 TUN 模式会有什么影响？</h5></div>
     <div class="panel-body">
-        PAC 模式可根据规则动态判断流量是否走代理，无需手动切换节点。适合国内外混合访问环境，提高网络访问速度和稳定性，同时减少误操作导致的访问失败。<hr />    </div>
+        启用 TUN 模式会拦截并转发路由器上全部或选定流量，这会增加路由器 CPU 与内存负担，可能影响路由器其他服务表现。建议在性能足够的设备上启用，或仅对特定设备/端口进行分流。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 的多出口功能如何使用？</h5></div>
+    <div class="panel-body">
+        WinXray 支持同时配置多个 outbound 节点，并通过路由规则或策略组选择不同出口。这样可以根据流量类型或目的地自动选择节点，实现灵活分流和负载均衡。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 的策略组支持哪些节点选择策略？</h5></div>
@@ -342,19 +348,14 @@ AltStore是一款允许用户自助安装未上架应用的工具，支持安装
         部分客户端在解析订阅时只保留节点信息而忽略 rules 或 proxies-group，建议使用支持完整解析的订阅转换器（如 sub-converter）先将订阅转换为兼容格式再导入，或手动合并规则文件。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 支持按端口和协议分流吗？</h5></div>
+    <div class="panel-heading"><h5>Matsuri 的节点测速结果能影响策略组吗？</h5></div>
     <div class="panel-body">
-        支持。QuantumultX 可以按 TCP、UDP、端口和应用协议分流流量，结合策略组使用，确保游戏、视频和广告屏蔽走最优节点，提高访问速度和网络稳定性。<hr />    </div>
+        可以。Matsuri 会将延迟最低的节点自动标记为优先节点，结合策略组，程序会优先选择最佳节点处理流量，保证访问速度和连接稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的多出口功能如何使用？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 如何按端口匹配流量分配节点？</h5></div>
     <div class="panel-body">
-        WinXray 支持同时配置多个 outbound 节点，并通过路由规则或策略组选择不同出口。这样可以根据流量类型或目的地自动选择节点，实现灵活分流和负载均衡。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 在路由器上使用 TUN 模式会有什么影响？</h5></div>
-    <div class="panel-body">
-        启用 TUN 模式会拦截并转发路由器上全部或选定流量，这会增加路由器 CPU 与内存负担，可能影响路由器其他服务表现。建议在性能足够的设备上启用，或仅对特定设备/端口进行分流。    </div>
+        Sing-box 支持按端口匹配流量，将不同应用的流量分配到指定节点。结合策略组使用，可实现精准分流，优化访问速度和网络稳定性，提高整体网络体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -402,16 +403,16 @@ AltStore是一款允许用户自助安装未上架应用的工具，支持安装
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-6-24-clash-node-daily-updates.htm" title="VPN试用 - 6月24日22.6M/S|免费SSR节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 6月24日22.6M/S|免费SSR节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-18-clash-node.htm" title="VPN试用 - 6月18日18.9M/S|免费Singbox节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 6月18日18.9M/S|免费Singbox节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-15-clash-verge-rev-node.htm" title="VPN试用 - 7月15日19.7M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 7月15日19.7M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-9-clash-stash.htm" title="VPN试用 - 6月9日19.3M/S|免费Trojan节点/Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 6月9日19.3M/S|免费Trojan节点/Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-7-4-clash-verge-rev-nodes.htm" title="VPN试用 - 7月4日18.6M/S|免费Clash节点/Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 7月4日18.6M/S|免费Clash节点/Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-7-3-node-share.htm" title="VPN试用 - 7月3日19.5M/S|免费Trojan节点/Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 7月3日19.5M/S|免费Trojan节点/Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-1-clash-verge-rev-windows.htm" title="VPN试用 - 7月1日23M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Trojan节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 7月1日23M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Trojan节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-20-clash-verge-rev-nodes.htm" title="VPN试用 - 6月20日19.9M/S|免费SSR节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 6月20日19.9M/S|免费SSR节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-29-clash-verge-rev-node.htm" title="VPN试用 - 6月29日18.6M/S|免费Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 6月29日18.6M/S|免费Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-22-clash-verge-rev-node-github.htm" title="VPN试用 - 6月22日21.4M/S|免费SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/Clash节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 6月22日21.4M/S|免费SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/Clash节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-27-clash-v2ray-ss-ssr.htm" title="VPN试用 - 6月27日22.6M/S|免费Shadowrocket节点/Trojan节点/Clash节点/Singbox节点/SSR节点/V2ray节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 6月27日22.6M/S|免费Shadowrocket节点/Trojan节点/Clash节点/Singbox节点/SSR节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-12-clash-stash-node.htm" title="VPN试用 - 6月12日19.7M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 6月12日19.7M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-7-5-clash-verge-rev-windows.htm" title="VPN试用 - 7月5日22.1M/S|免费Clash节点/V2ray节点/Trojan节点/Shadowrocket节点/SSR节点/Singbox节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 7月5日22.1M/S|免费Clash节点/V2ray节点/Trojan节点/Shadowrocket节点/SSR节点/Singbox节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-7-clash-verge-rev-windows.htm" title="VPN试用 - 7月7日19.1M/S|免费Singbox节点/V2ray节点/Trojan节点/SSR节点/Shadowrocket节点/Clash节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 7月7日19.1M/S|免费Singbox节点/V2ray节点/Trojan节点/SSR节点/Shadowrocket节点/Clash节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-19-clash-node-github.htm" title="VPN试用 - 6月19日20.1M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Trojan节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 6月19日20.1M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Trojan节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-10-clash-meta-github.htm" title="VPN试用 - 6月10日19.4M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点/Trojan节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 6月10日19.4M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点/Trojan节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-14-free-node-subscribe.htm" title="VPN试用 - 6月14日21.4M/S|免费SSR节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点节点推荐，V2rayC梯子购买推荐">VPN试用 - 6月14日21.4M/S|免费SSR节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -423,7 +424,7 @@ AltStore是一款允许用户自助安装未上架应用的工具，支持安装
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">23</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
