@@ -1,4 +1,4 @@
-# VPN试用 - 7月25日21.1M/S|免费V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点节点推荐，V2rayC梯子购买推荐  更新时间 2026-07-25 10:09:03
+# VPN试用 - 8月1日22.9M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点节点推荐，V2rayC梯子购买推荐  更新时间 2026-08-01 09:50:21
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://vpnshiyong.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://vpnshiyong.github.io/uploads/2026/07/0-20260725.yaml
-- https://vpnshiyong.github.io/uploads/2026/07/1-20260725.yaml
-- https://vpnshiyong.github.io/uploads/2026/07/2-20260725.yaml
-- https://vpnshiyong.github.io/uploads/2026/07/3-20260725.yaml
-- https://vpnshiyong.github.io/uploads/2026/07/4-20260725.yaml
+- https://vpnshiyong.github.io/uploads/2026/08/0-20260801.yaml
+- https://vpnshiyong.github.io/uploads/2026/08/1-20260801.yaml
+- https://vpnshiyong.github.io/uploads/2026/08/2-20260801.yaml
+- https://vpnshiyong.github.io/uploads/2026/08/3-20260801.yaml
+- https://vpnshiyong.github.io/uploads/2026/08/4-20260801.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://vpnshiyong.github.io/uploads/2026/07/0-20260725.txt
-- https://vpnshiyong.github.io/uploads/2026/07/1-20260725.txt
-- https://vpnshiyong.github.io/uploads/2026/07/2-20260725.txt
-- https://vpnshiyong.github.io/uploads/2026/07/3-20260725.txt
-- https://vpnshiyong.github.io/uploads/2026/07/4-20260725.txt
+- https://vpnshiyong.github.io/uploads/2026/08/0-20260801.txt
+- https://vpnshiyong.github.io/uploads/2026/08/1-20260801.txt
+- https://vpnshiyong.github.io/uploads/2026/08/2-20260801.txt
+- https://vpnshiyong.github.io/uploads/2026/08/3-20260801.txt
+- https://vpnshiyong.github.io/uploads/2026/08/4-20260801.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://vpnshiyong.github.io/uploads/2026/07/20260725.json
+- https://vpnshiyong.github.io/uploads/2026/08/20260801.json
 
 ## 更多Clash节点订阅 ：
 
